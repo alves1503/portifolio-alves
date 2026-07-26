@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henrique Alves — Desenvolvedor Full-Stack</title>
+  <meta name="description"
+    content="Portfólio profissional de Henrique Alves — desenvolvimento web, arquitetura de software e experiências digitais.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- ============ CURSOR GLOW (decorativo) ============ -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="#home" class="logo" aria-label="Início">
+        <span class="logo__mark">H<span class="logo__dot">•</span>A</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#sobre" class="nav__link" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="#tech" class="nav__link" data-i18n="nav.tech">Tecnologias</a></li>
+          <li><a href="#projetos" class="nav__link" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#experiencia" class="nav__link" data-i18n="nav.experience">Experiência</a></li>
+          <li><a href="#formacao" class="nav__link" data-i18n="nav.education">Formação</a></li>
+          <li><a href="#contato" class="nav__link" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema claro e escuro"
+          aria-pressed="false">
+          <i class="fa-solid fa-sun theme-toggle__icon theme-toggle__icon--sun"></i>
+          <i class="fa-solid fa-moon theme-toggle__icon theme-toggle__icon--moon"></i>
+        </button>
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch to English">EN</button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+          aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <div class="hero__glow"></div>
+      </div>
+
+      <div class="container hero__container">
+        <div class="hero__content" data-reveal>
+          <p class="eyebrow" data-i18n="hero.eyebrow"><span class="eyebrow__dot"></span>Olá, sou Henrique Alves</p>
+          <h1 class="hero__title" data-i18n="hero.title" data-i18n-html="true">
+            Desenvolvedor<br>
+            Full-Stack<br>
+          </h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
+            Desenvolvedor Full-Stack focado em entregar soluções web escaláveis, integrações de sistemas e automações
+            com
+            atenção a performance, usabilidade e arquitetura sustentável.
+          </p>
+          <div class="hero__cta">
+            <a href="#projetos" class="btn btn--primary" data-i18n="hero.ctaPrimary">
+              Ver projetos <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contato" class="btn btn--ghost" data-i18n="hero.ctaSecondary">Vamos conversar</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-reveal>
+          <div class="photo-orbit">
+            <div class="photo-orbit__ring"></div>
+            <div class="photo-orbit__flip" id="photoFlip">
+              <div class="photo-orbit__face photo-orbit__face--front">
+                <img src="assets/image/foto.jpeg" alt="Foto de perfil de Henrique Alves" loading="eager">
+              </div>
+              <div class="photo-orbit__face photo-orbit__face--back">
+                <img src="assets/image/avatar.png" alt="Avatar ilustrado de Henrique Alves" loading="eager">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="hero__tags" aria-hidden="true">
+          <li>FRONTEND</li>
+          <li>BACKEND</li>
+          <li>UI / UX</li>
+          <li>CLOUD</li>
+        </ul>
+      </div>
+
+      <a href="#sobre" class="scroll-cue" aria-label="Rolar até a seção Sobre" data-i18n="hero.scrollCue"
+        data-i18n-html="true">
+        <span>Role</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section about" id="sobre">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" data-i18n="about.title">Sobre mim</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__text" data-reveal>
+
+            <p data-i18n="about.text">
+              Sou desenvolvedor Full-Stack com experiência em construir aplicações web, APIs, integrações e automações
+              que resolvem problemas reais de forma prática e escalável. Tenho foco em código limpo, boas práticas e
+              interfaces intuitivas, sempre buscando entregar soluções com impacto direto para usuários e negócios.
+
+              Tenho especial interesse em desenvolvimento Back-end, arquitetura de software, automação, integração de
+              sistemas e Inteligência Artificial. Ao longo da minha jornada, construí projetos com Node.js, React, PHP,
+              Python, MySQL, Docker, n8n e ferramentas modernas para criar experiências mais completas e eficientes.
+
+              Estou em constante evolução, aprimorando habilidades técnicas e desenvolvendo uma visão mais estratégica
+              de tecnologia, produto e entrega.
+            </p>
+
+
+          </div>
+
+          <div class="about__card" data-reveal>
+            <div class="about__card-inner">
+              <i class="fa-solid fa-quote-left about__quote-icon"></i>
+              <p class="about__quote" data-i18n="about.quote">
+                Good design is clear thinking made visible — and good code is that thinking in action.
+              </p>
+              <div class="about__signature" data-i18n="about.signature">Henrique Alves</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECHNOLOGIES ============ -->
+    <section class="section tech" id="tech">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" data-i18n="tech.title">Tecnologias</h2>
+          <p class="section-sub" data-i18n="tech.subtitle">Ecossistema tecnológico estratégico para construir soluções
+            modernas e eficientes.
+          </p>
+        </div>
+
+        <div class="tech__groups">
+          <div class="tech__group" data-reveal>
+            <h3 class="tech__group-title"><i class="fa-solid fa-display"></i> <span
+                data-i18n="tech.frontend">Frontend</span></h3>
+            <ul class="tech__list">
+              <li class="tech__item"><i class="fa-brands fa-html5"></i><span>HTML5</span></li>
+              <li class="tech__item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></li>
+              <li class="tech__item"><i class="fa-brands fa-js"></i><span>JavaScript</span></li>
+              <li class="tech__item"><i class="fa-brands fa-react"></i><span>React</span></li>
+              <li class="tech__item"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></li>
+              <li class="tech__item"><i class="fa-solid fa-wind"></i><span>Tailwind CSS</span></li>
+            </ul>
+          </div>
+
+          <div class="tech__group" data-reveal>
+            <h3 class="tech__group-title"><i class="fa-solid fa-server"></i> <span
+                data-i18n="tech.backend">Backend</span></h3>
+            <ul class="tech__list">
+              <li class="tech__item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></li>
+              <li class="tech__item"><i class="fa-brands fa-python"></i><span>Python</span></li>
+              <li class="tech__item"><i class="fa-brands fa-php"></i><span>PHP</span></li>
+              <li class="tech__item"><i class="fa-solid fa-database"></i><span>SQL</span></li>
+              <li class="tech__item"><i class="fa-solid fa-leaf"></i><span>MongoDB</span></li>
+              <li class="tech__item"><i class="fa-solid fa-diagram-project"></i><span>REST</span></li>
+            </ul>
+          </div>
+
+          <div class="tech__group" data-reveal>
+            <h3 class="tech__group-title"><i class="fa-solid fa-cloud"></i> <span data-i18n="tech.cloud">Cloud &amp;
+                Tools</span></h3>
+            <ul class="tech__list">
+              <li class="tech__item"><i class="fa-brands fa-git-alt"></i><span>Git &amp; GitHub</span></li>
+              <li class="tech__item"><i class="fa-brands fa-docker"></i><span>Docker</span></li>
+              <li class="tech__item"><i class="fa-brands fa-bots"></i><span>N8N</span></li>
+              <li class="tech__item"><i class="fa-brands fa-figma"></i><span>Figma</span></li>
+              <li class="tech__item"><i class="fa-solid fa-robot"></i><span>IA Generativa</span></li>
+              <li class="tech__item"><i class="fa-solid fa-globe"></i><span>Postman</span></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projetos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" data-i18n="projects.title">Projetos selecionados</h2>
+          <p class="section-sub" data-i18n="projects.subtitle">Aplicações que mostram minha evolução em desenvolvimento
+            web,
+            back-end e experiência do usuário.
+          </p>
+        </div>
+
+        <div class="projects__grid">
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <div class="project-card__placeholder">
+                <img src="./assets/image/chatbot-php.png" alt="">
+              </div>
+              <div class="project-card__overlay">
+                <a href="https://github.com/alves1503/chat-product-php" class="icon-btn"
+                  aria-label="Ver código no GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 data-i18n="projects.chatbotTitle">Chatbot inteligente para atendimento</h3>
+              <p data-i18n="projects.chatbotText">Aplicativo full-stack de suporte automatizado com chat em tempo real,
+                integração Gemini API, catálogo de produtos em banco de dados e documentação Swagger. Projeto elaborado
+                como solução completa de atendimento ao cliente, com arquitetura clara e ambiente Docker.
+              </p>
+              <ul class="project-card__tags">
+                <li>PHP</li>
+                <li>React</li>
+                <li>MySQL</li>
+                <li>Vite</li>
+                <li>Swagger</li>
+                <li>Gemini API</li>
+                <li>Docker</li>
+                <li>REST API</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <div class="project-card__placeholder">
+                <img src="./assets/image/denuncias-csharp.png" alt="Sistema de denúncias">
+              </div>
+              <div class="project-card__overlay">
+                <a href="https://github.com/alves1503/sistema-denuncias" class="icon-btn"
+                  aria-label="Ver código no GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 data-i18n="projects.complaintsTitle">Plataforma de gestão de denúncias</h3>
+              <p data-i18n="projects.complaintsText">Plataforma acadêmica desenvolvida com ASP.NET Core MVC para
+                registro,
+                acompanhamento e gestão de denúncias, com autenticação, controle por perfil e persistência em SQL Server
+                usando Entity Framework.
+              </p>
+              <ul class="project-card__tags">
+                <li>C#</li>
+                <li>ASP.NET Core</li>
+                <li>Entity Framework</li>
+                <li>SQL Server</li>
+                <li>Razor</li>
+                <li>Bootstrap</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <div class="project-card__placeholder">
+                <img src="./assets/image/conexao-editores.png" alt="Conexão Editores">
+              </div>
+              <div class="project-card__overlay">
+                <a href="https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-1-e1-proj-web-t13-g1-turma-13/codigo-fonte/HomePage/index.html"
+                  class="icon-btn" aria-label="Ver projeto ao vivo"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/alves1503/conexao-editores" class="icon-btn"
+                  aria-label="Ver código no GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 data-i18n="projects.editorsTitle">Conexão Editores</h3>
+              <p data-i18n="projects.editorsText">Projeto front-end para plataforma que conecta clientes e editores de
+                vídeo,
+                com interface institucional, páginas de apresentação, cadastro e login, e navegação fluida entre seções.
+              </p>
+              <ul class="project-card__tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>UI/UX</li>
+                <li>Figma</li>
+                <li>Responsivo</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <div class="project-card__placeholder">
+                <img src="assets/image/node.jpg" alt="">
+              </div>
+              <div class="project-card__overlay">
+
+                <a href="https://github.com/alves1503/account" class="icon-btn" aria-label="Ver código no GitHub"
+                  target="_blank"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 data-i18n="projects.accountTitle">Account — Simulador financeiro</h3>
+              <p data-i18n="projects.accountText">Aplicação de terminal para simular operações bancárias básicas como
+                criação de conta, depósitos, saques
+                e consultas de saldo, com armazenamento local em arquivos JSON.</p>
+              <ul class="project-card__tags">
+                <li>Node.js</li>
+                <li>JavaScript</li>
+                <li>Inquirer</li>
+                <li>CLI</li>
+                <li>File System</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section experience" id="experiencia">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" data-i18n="experience.title">Experiência profissional</h2>
+        </div>
+
+        <ul class="timeline">
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">2026(MAR) — Presente</span>
+              <h3 data-i18n="experience.itTitle">Assistente de TI</h3>
+              <span class="timeline__company">Lider Interiores</span>
+              <p data-i18n="experience.itText">Desenvolvimento de aplicações web usando PHP (MVC), HTML, CSS, JavaScript
+                e Bootstrap, além de APIs REST e integrações Node.js. Implementação de soluções de Inteligência
+                Artificial, incluindo chatbots com RAG, embeddings e integração com banco de dados para automação de
+                processos.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">(OUT)2024 — (FEV)2026</span>
+              <h3 data-i18n="experience.planningTitle">Assistente de planejamento e controle de produção</h3>
+              <span class="timeline__company">Lider Interiores</span>
+              <p data-i18n="experience.planningText">Apoio ao planejamento e controle de produção, incluindo
+                elaboração de relatórios, análise de dados,
+                monitoramento de ordens de produção e suporte à otimização de processos.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">AGO 2025 — DEZ 2025</span>
+              <h3 data-i18n="experience.mentorTitle">Mentor de projeto Front-End</h3>
+              <span class="timeline__company">PUC Minas</span>
+              <p data-i18n="experience.mentorText">Trabalhei como mentor acadêmico auxiliando colegas em disciplinas
+                básicas
+                do primeiro módulo, com orientação em fundamentos de engenharia de software, lógica, algoritmos e
+                desenvolvimento web. Também contribuí em sessões práticas com prototipagem em Figma, HTML, CSS e
+                JavaScript, além de suporte em Git, GitHub Classroom e ferramentas acadêmicas.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">(AGO)2026 — (SET)2024</span>
+              <h3 data-i18n="experience.traineeTitle">Aprendiz administrativo</h3>
+              <span class="timeline__company">Lider Interiores</span>
+              <p data-i18n="experience.traineeText">Atuei como aprendiz administrativo, desenvolvendo habilidades em
+                organização, comunicação, trabalho em equipe e
+                apoio às rotinas administrativas diárias da empresa.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section education" id="formacao">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" data-i18n="education.title">Formação e aprendizado contínuo</h2>
+        </div>
+
+        <div class="education__tabs" data-reveal>
+          <div class="tabs__buttons" role="tablist" aria-label="Categorias de formação">
+            <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="tab-grad" id="tabbtn-grad"
+              data-tab="grad">
+              <i class="fa-solid fa-graduation-cap"></i> <span data-i18n="education.tabDegree">Graduação</span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-tec" id="tabbtn-tec"
+              data-tab="tec">
+              <i class="fa-solid fa-toolbox"></i> <span data-i18n="education.tabTech">Certificação técnica</span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-idi" id="tabbtn-idi"
+              data-tab="idi">
+              <i class="fa-solid fa-language"></i> <span data-i18n="education.tabLang">Idiomas</span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-cursos" id="tabbtn-cursos"
+              data-tab="cursos">
+              <i class="fa-solid fa-certificate"></i> <span data-i18n="education.tabCourses">Cursos</span>
+            </button>
+          </div>
+
+          <div class="tabs__panels">
+            <div class="tab-panel is-active" id="tab-grad" role="tabpanel" aria-labelledby="tabbtn-grad">
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div>
+                  <h3 data-i18n="education.degreeTitle">Graduação em Análise e Desenvolvimento de Sistemas</h3>
+                  <span class="edu-item__meta" data-i18n="education.degreeMeta">Pontifícia Universidade Católica de
+                    Minas
+                    Gerais · 2025 — 2028</span>
+                  <p data-i18n="education.degreeText">Formação voltada a engenharia de software, estruturas de dados e
+                    desenvolvimento web.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="tab-tec" role="tabpanel" aria-labelledby="tabbtn-tec" hidden>
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-toolbox"></i></div>
+                <div>
+                  <h3 data-i18n="education.techTitle">Formação técnica em qualificação profissional</h3>
+                  <span class="edu-item__meta" data-i18n="education.techMeta">Pontifícia Universidade Católica de Minas
+                    Gerais · 2025 — 2026</span>
+                  <p data-i18n="education.techText">Fundamentos sólidos em lógica de programação, Front-End, Back-End,
+                    banco de dados e redes.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="tab-idi" role="tabpanel" aria-labelledby="tabbtn-idi" hidden>
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-language"></i></div>
+                <div>
+                  <h3 data-i18n="education.langTitle">Inglês — Nível básico</h3>
+                  <span class="edu-item__meta" data-i18n="education.langMeta">KNN / Knowledge Now · Início em
+                    2025</span>
+                  <p data-i18n="education.langText">Inglês em desenvolvimento, com capacidade para leitura de
+                    documentação técnica e
+                    compreensão de conteúdos na área de tecnologia.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="tab-cursos" role="tabpanel" aria-labelledby="tabbtn-cursos" hidden>
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3 data-i18n="education.courseHtml">HTML5 e CSS3</h3>
+                  <span class="edu-item__meta" data-i18n="education.courseHtmlMeta">Plataforma Curso em Vídeo ·
+                    2025</span>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3 data-i18n="education.courseAlgorithms">Algoritmos e lógica de programação</h3>
+                  <span class="edu-item__meta" data-i18n="education.courseAlgorithmsMeta">Plataforma Udemy · 2025</span>
+                </div>
+              </div>
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3 data-i18n="education.courseFigma">PRO FIGMA | UI DESIGN com Figma do zero ao especialista</h3>
+                  <span class="edu-item__meta" data-i18n="education.courseFigmaMeta">Plataforma Udemy · 2025</span>
+                </div>
+              </div>
+
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3>Imersão IA Google Gemini</h3>
+                  <span class="edu-item__meta">Plataforma Alura · 2025</span>
+                </div>
+              </div>
+
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3>Imersão IA Google Gemini</h3>
+                  <span class="edu-item__meta">Plataforma Alura · 2025</span>
+                </div>
+              </div>
+
+
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3 data-i18n="education.courseGit">Git e GitHub do básico ao avançado</h3>
+                  <span class="edu-item__meta" data-i18n="education.courseGitMeta">Plataforma Udemy · 2025</span>
+                </div>
+              </div>
+
+
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3 data-i18n="education.courseWex">WEX - End to End Engineering</h3>
+                  <span class="edu-item__meta" data-i18n="education.courseWexMeta">Plataforma DIO · 2025</span>
+                </div>
+              </div>
+
+              <div class="edu-item">
+                <div class="edu-item__icon"><i class="fa-solid fa-certificate"></i></div>
+                <div>
+                  <h3 data-i18n="education.courseN8n">Santander 2025 - Automação com N8N</h3>
+                  <span class="edu-item__meta" data-i18n="education.courseN8nMeta">Plataforma Udemy · 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contato">
+      <div class="container contact__container">
+        <div class="section-head" data-reveal>
+          <h2 class="section-title" data-i18n="contact.title">Vamos construir algo relevante juntos?</h2>
+          <p class="section-sub" data-i18n="contact.subtitle">Aberto a novos projetos, parcerias e oportunidades.</p>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__info" data-reveal>
+            <div class="contact__intro">
+              <p class="contact__eyebrow" data-i18n="contact.eyebrow">Disponibilidade</p>
+              <h3 data-i18n="contact.heading">Vamos conversar sobre seu próximo projeto</h3>
+              <p data-i18n="contact.text">Estou disponível para oportunidades de trabalho, colaborações e projetos
+                envolvendo
+                desenvolvimento web,
+                automação e soluções digitais.</p>
+            </div>
+
+            <a href="mailto:henriquefdalves15@email.com" class="contact__link">
+              <i class="fa-solid fa-envelope"></i>
+              <span>henriquefdalves15@email.com</span>
+            </a>
+            <a href="https://www.google.com/maps" rel="noreferrer" class="contact__link">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Minas Gerais, Brasil</span>
+            </a>
+
+            <div class="social-row">
+              <a href="https://www.linkedin.com/in/henriquedev15" class="social-icon" aria-label="LinkedIn"
+                rel="noreferrer" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://github.com/alves1503" class="social-icon" aria-label="GitHub" rel="noreferrer"
+                target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.instagram.com/alvezwx05/" class="social-icon" aria-label="Instagram" rel="noreferrer"
+                target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <form class="contact__form" id="contactForm" data-reveal novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" data-i18n="form.name">Nome</label>
+                <input type="text" id="name" name="name" required placeholder="Seu nome"
+                  data-i18n-attr="form.namePlaceholder">
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="form.email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="seu@email.com"
+                  data-i18n-attr="form.emailPlaceholder">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="form.message">Mensagem</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Conte um pouco sobre seu projeto..."
+                data-i18n-attr="form.messagePlaceholder"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" data-i18n="form.submit">
+              Enviar mensagem <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="logo footer__logo">
+        <span class="logo__mark">H<span class="logo__dot">•</span>A</span>
+      </a>
+
+      <nav class="footer__nav" aria-label="Navegação do rodapé">
+        <a href="#sobre" data-i18n="footer.about">Sobre</a>
+        <a href="#tech" data-i18n="footer.tech">Tecnologias</a>
+        <a href="#projetos" data-i18n="footer.projects">Projetos</a>
+        <a href="#experiencia" data-i18n="footer.experience">Experiência</a>
+        <a href="#formacao" data-i18n="footer.education">Formação</a>
+        <a href="#contato" data-i18n="footer.contact">Contato</a>
+      </nav>
+
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/henriquedev15/" class="social-icon" aria-label="LinkedIn"
+          target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/alves1503" class="social-icon" aria-label="GitHub" target="_blank"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/alvezwx05/" class="social-icon" aria-label="Instagram" target="_blank"><i
+            class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p data-i18n="footer.copyright" data-i18n-html="true">© <span id="year"></span> Henrique Alves. All rights
+        reserved.</p>
+      <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
