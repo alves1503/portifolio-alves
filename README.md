@@ -95,7 +95,3 @@ Em seguida, acesse `http://localhost:8000`.
 1. Faça um fork do repositório
 2. Crie uma branch com a sua melhoria
 3. Abra um pull request descrevendo as alterações
-
-## Licença
-
-Sem licença especificada. Adicione uma licença no repositório conforme sua preferência antes de publicar, se desejar.

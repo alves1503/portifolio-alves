@@ -16,12 +16,12 @@ const translations = {
     'hero.title': 'Desenvolvedor<br>Full-Stack<br>',
     'hero.subtitle': 'Desenvolvedor Full-Stack focado em entregar soluções web escaláveis, integrações de sistemas e automações com atenção a performance, usabilidade e arquitetura sustentável.',
     'hero.ctaPrimary': 'Ver projetos',
-    'hero.ctaSecondary': 'Vamos conversar',
+    'hero.ctaSecondary': 'Acessar currículo',
     'hero.scrollCue': 'Role',
     'about.title': 'Sobre mim',
     'about.text': 'Sou desenvolvedor Full-Stack com experiência em construir produtos digitais, APIs e automações que resolvem desafios reais com eficiência e escalabilidade. Entrego código limpo, arquitetura robusta e interfaces intuitivas, sempre buscando resultados mensuráveis para usuários e negócios. Tenho atuação em Back-end, integração de sistemas, automação e inteligência artificial, utilizando Node.js, React, PHP, Python, MySQL, Docker e n8n em projetos de alto padrão. Busco evolução contínua e uma visão estratégica alinhada a tecnologia, produto e entrega.',
-    'about.quote': 'Bom design é pensamento claro tornado visível — e bom código é esse pensamento em funcionamento.',
-    'about.signature': 'Henrique Alves',
+    'about.quote': 'Tudo o que fizerem, façam de todo o coração, como para o Senhor.',
+    'about.signature': 'Colossenses',
     'tech.title': 'Tecnologias',
     'tech.subtitle': 'Ecossistema tecnológico estratégico para construir aplicações modernas e seguras.',
     'tech.frontend': 'Frontend',
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------------------------
-   1. TEMA CLARO / ESCURO
+   TEMA CLARO / ESCURO
    -------------------------------------------------------------------- */
 function initTheme() {
   const toggle = document.getElementById('themeToggle');
@@ -241,7 +241,7 @@ function initTheme() {
 }
 
 /* --------------------------------------------------------------------
-   2. IDIOMA / TRADUÇÃO
+   IDIOMA / TRADUÇÃO
    -------------------------------------------------------------------- */
 function initLanguageToggle() {
   const toggle = document.getElementById('langToggle');
@@ -295,7 +295,7 @@ function initLanguageToggle() {
 }
 
 /* --------------------------------------------------------------------
-   3. HEADER — FUNDO AO ROLAR
+   HEADER — FUNDO AO ROLAR
    -------------------------------------------------------------------- */
 function initHeaderScroll() {
   const header = document.getElementById('header');
@@ -305,7 +305,7 @@ function initHeaderScroll() {
 }
 
 /* --------------------------------------------------------------------
-   4. MENU MOBILE
+   MENU MOBILE
    -------------------------------------------------------------------- */
 function initMobileNav() {
   const navToggle = document.getElementById('navToggle');
@@ -329,7 +329,7 @@ function initMobileNav() {
 }
 
 /* --------------------------------------------------------------------
-   5. LINK ATIVO NA NAV CONFORME A SEÇÃO VISÍVEL
+   LINK ATIVO NA NAV CONFORME A SEÇÃO VISÍVEL
    -------------------------------------------------------------------- */
 function initActiveNavLink() {
   const sections = document.querySelectorAll('main section[id]');
@@ -350,7 +350,7 @@ function initActiveNavLink() {
 }
 
 /* --------------------------------------------------------------------
-   6. REVEAL AO ROLAR (IntersectionObserver)
+   REVEAL AO ROLAR (IntersectionObserver)
    -------------------------------------------------------------------- */
 function initScrollReveal() {
   const items = document.querySelectorAll('[data-reveal]');
@@ -367,7 +367,7 @@ function initScrollReveal() {
 }
 
 /* --------------------------------------------------------------------
-   7. CONTADORES ANIMADOS (seção Sobre)
+    CONTADORES ANIMADOS (seção Sobre)
    -------------------------------------------------------------------- */
 function initCounters() {
   const counters = document.querySelectorAll('[data-count]');
@@ -397,7 +397,7 @@ function initCounters() {
 }
 
 /* --------------------------------------------------------------------
-   8. TABS — SEÇÃO FORMAÇÃO
+   TABS — SEÇÃO FORMAÇÃO
    -------------------------------------------------------------------- */
 function initTabs() {
   const buttons = document.querySelectorAll('.tab-btn');
@@ -422,7 +422,7 @@ function initTabs() {
 }
 
 /* --------------------------------------------------------------------
-   9. FORMULÁRIO DE CONTATO (validação e feedback no cliente)
+   FORMULÁRIO DE CONTATO (validação e feedback no cliente)
    -------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -456,7 +456,7 @@ function initContactForm() {
 }
 
 /* --------------------------------------------------------------------
-   10. BOTÃO VOLTAR AO TOPO
+   BOTÃO VOLTAR AO TOPO
    -------------------------------------------------------------------- */
 function initBackToTop() {
   const btn = document.getElementById('backToTop');
@@ -466,7 +466,7 @@ function initBackToTop() {
 }
 
 /* --------------------------------------------------------------------
-   11. GLOW DECORATIVO QUE SEGUE O CURSOR (apenas desktop)
+   GLOW DECORATIVO QUE SEGUE O CURSOR (apenas desktop)
    -------------------------------------------------------------------- */
 function initCursorGlow() {
   const glow = document.querySelector('.cursor-glow');
