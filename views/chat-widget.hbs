@@ -1,0 +1,49 @@
+<div class="portfolio-chat" data-chat-root>
+  <section class="portfolio-chat__panel" id="portfolio-chat-panel" role="dialog" aria-modal="false"
+    aria-labelledby="portfolio-chat-title" hidden>
+    <header class="portfolio-chat__header">
+      <div class="portfolio-chat__identity">
+        <img class="portfolio-chat__avatar" src="/assets/image/ia.png" alt="" aria-hidden="true">
+        <div>
+          <h2 id="portfolio-chat-title" data-chat-copy="title">al.ai</h2>
+          <p><span class="portfolio-chat__status"></span><span data-chat-copy="status">Assistente do Henrique</span></p>
+        </div>
+      </div>
+      <button class="portfolio-chat__icon-button" type="button" data-chat-close aria-label="Fechar conversa"
+        title="Fechar conversa">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <div class="portfolio-chat__messages" data-chat-messages role="log" aria-live="polite" aria-relevant="additions">
+      <div class="portfolio-chat__message portfolio-chat__message--assistant" data-chat-greeting>
+        Olá! Eu sou al.ai, assistente virtual do Henrique. Pergunte sobre a trajetória, os projetos, a experiência, a
+        formação ou as tecnologias dele.
+      </div>
+      <div class="portfolio-chat__suggestions" data-chat-suggestions>
+        <button type="button" data-chat-suggestion="O que Henrique está estudando?">Formação</button>
+        <button type="button" data-chat-suggestion="Quais projetos ele desenvolveu?">Projetos</button>
+        <button type="button" data-chat-suggestion="Onde Henrique trabalha atualmente?">Experiência</button>
+        <button type="button" data-chat-suggestion="Quais tecnologias ele usa?">Tecnologias</button>
+      </div>
+    </div>
+
+    <p class="portfolio-chat__error" data-chat-error role="status" hidden></p>
+    <form class="portfolio-chat__form" data-chat-form>
+      <label class="visually-hidden" for="portfolio-chat-input" data-chat-copy="inputLabel">Sua pergunta</label>
+      <input id="portfolio-chat-input" name="message" type="text" maxlength="1200" autocomplete="off"
+        placeholder="Pergunte sobre o Henrique..." data-chat-copy="placeholder" required>
+      <button class="portfolio-chat__send" type="submit" data-chat-send aria-label="Enviar mensagem"
+        title="Enviar mensagem">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </button>
+    </form>
+    <p class="portfolio-chat__note" data-chat-copy="note">Respostas geradas por IA com base neste portfólio.</p>
+  </section>
+
+  <button class="portfolio-chat__launcher" type="button" aria-label="Perguntar ao al.ai" aria-expanded="false"
+    aria-controls="portfolio-chat-panel" data-chat-toggle title="Perguntar ao al.ai">
+    <i class="fa-solid fa-robot" aria-hidden="true"></i>
+    <span class="visually-hidden" data-chat-copy="launcher">Pergunte ao al.ai</span>
+  </button>
+</div>

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/chat-widget.css">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
@@ -83,31 +84,34 @@
             <a href="#projetos" class="btn btn--primary" data-i18n="hero.ctaPrimary">
               Ver projetos <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="./assets/curriculo/Curriculo-Henrique.pdf" class="btn btn--ghost"
-              data-i18n="hero.ctaSecondary" target="_blank">Acessar currículo</a>
+            <a href="./assets/curriculo/Curriculo-Henrique.pdf" class="btn btn--ghost" data-i18n="hero.ctaSecondary"
+              target="_blank">Acessar currículo</a>
           </div>
         </div>
 
         <div class="hero__visual" data-reveal>
-          <div class="photo-orbit">
-            <div class="photo-orbit__ring"></div>
-            <div class="photo-orbit__flip" id="photoFlip">
-              <div class="photo-orbit__face photo-orbit__face--front">
-                <img src="assets/image/foto.jpeg" alt="Foto de perfil de Henrique Alves" loading="eager">
-              </div>
-              <div class="photo-orbit__face photo-orbit__face--back">
-                <img src="assets/image/avatar.png" alt="Avatar ilustrado de Henrique Alves" loading="eager">
-              </div>
-            </div>
+          <div class="tech-orbit">
+            <div class="tech-orbit__ring tech-orbit__ring--outer" aria-hidden="true"></div>
+            <div class="tech-orbit__ring tech-orbit__ring--inner" aria-hidden="true"></div>
+            <figure class="tech-orbit__portrait">
+              <img src="assets/image/foto.jpeg" alt="Henrique Alves, desenvolvedor Full-Stack" loading="eager">
+            </figure>
+            <ul class="tech-orbit__track" aria-label="Tecnologias com que trabalho">
+              <li class="tech-orbit__node" style="--orbit-angle: 0deg"><span class="tech-orbit__chip">Node.js</span>
+              </li>
+              <li class="tech-orbit__node" style="--orbit-angle: 45deg"><span class="tech-orbit__chip">React</span></li>
+              <li class="tech-orbit__node" style="--orbit-angle: 90deg"><span class="tech-orbit__chip">TypeScript</span>
+              </li>
+              <li class="tech-orbit__node" style="--orbit-angle: 135deg"><span class="tech-orbit__chip">Java</span></li>
+              <li class="tech-orbit__node" style="--orbit-angle: 180deg"><span class="tech-orbit__chip">Spring
+                  Boot</span></li>
+              <li class="tech-orbit__node" style="--orbit-angle: 225deg"><span class="tech-orbit__chip">Python</span>
+              </li>
+              <li class="tech-orbit__node" style="--orbit-angle: 270deg"><span class="tech-orbit__chip">PHP</span></li>
+              <li class="tech-orbit__node" style="--orbit-angle: 315deg"><span class="tech-orbit__chip">AWS</span></li>
+            </ul>
           </div>
         </div>
-
-        <ul class="hero__tags" aria-hidden="true">
-          <li>FRONTEND</li>
-          <li>BACKEND</li>
-          <li>UI / UX</li>
-          <li>CLOUD</li>
-        </ul>
       </div>
 
       <a href="#sobre" class="scroll-cue" aria-label="Rolar até a seção Sobre" data-i18n="hero.scrollCue"
@@ -174,6 +178,7 @@
               <li class="tech__item"><i class="fa-brands fa-html5"></i><span>HTML5</span></li>
               <li class="tech__item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></li>
               <li class="tech__item"><i class="fa-brands fa-js"></i><span>JavaScript</span></li>
+              <li class="tech__item"><i class="fa-solid fa-code"></i><span>TypeScript</span></li>
               <li class="tech__item"><i class="fa-brands fa-react"></i><span>React</span></li>
               <li class="tech__item"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></li>
               <li class="tech__item"><i class="fa-solid fa-wind"></i><span>Tailwind CSS</span></li>
@@ -187,9 +192,11 @@
               <li class="tech__item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></li>
               <li class="tech__item"><i class="fa-brands fa-python"></i><span>Python</span></li>
               <li class="tech__item"><i class="fa-brands fa-php"></i><span>PHP</span></li>
+              <li class="tech__item"><i class="fa-brands fa-java"></i><span>Java</span></li>
+              <li class="tech__item"><i class="fa-solid fa-leaf"></i><span>Spring Boot</span></li>
               <li class="tech__item"><i class="fa-solid fa-database"></i><span>SQL</span></li>
               <li class="tech__item"><i class="fa-solid fa-leaf"></i><span>MongoDB</span></li>
-              <li class="tech__item"><i class="fa-solid fa-diagram-project"></i><span>REST</span></li>
+
             </ul>
           </div>
 
@@ -199,6 +206,7 @@
             <ul class="tech__list">
               <li class="tech__item"><i class="fa-brands fa-git-alt"></i><span>Git &amp; GitHub</span></li>
               <li class="tech__item"><i class="fa-brands fa-docker"></i><span>Docker</span></li>
+              <li class="tech__item"><i class="fa-brands fa-aws"></i><span>AWS</span></li>
               <li class="tech__item"><i class="fa-brands fa-bots"></i><span>N8N</span></li>
               <li class="tech__item"><i class="fa-brands fa-figma"></i><span>Figma</span></li>
               <li class="tech__item"><i class="fa-solid fa-robot"></i><span>IA Generativa</span></li>
@@ -222,6 +230,66 @@
         </div>
 
         <div class="projects__grid">
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <div class="project-card__placeholder">
+                <img src="./assets/image/inicio.png" alt="Tela inicial do Alves.CRM">
+              </div>
+              <div class="project-card__overlay">
+                <a href="https://github.com/alves1503/crm-alves" class="icon-btn"
+                  aria-label="Ver código do Alves.CRM no GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 data-i18n="projects.alvesCrmTitle">Alves.CRM — Atendimento inteligente com IA</h3>
+              <p data-i18n="projects.alvesCrmText">CRM web para gerenciar atendimentos, conversas via WhatsApp, leads e
+                reuniões. Integra um agente GPT-4o mini com RAG para responder sobre serviços, qualificar leads e apoiar
+                agendamentos, com encaminhamento para atendimento humano quando falta contexto.</p>
+              <ul class="project-card__tags">
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>React</li>
+                <li>MySQL</li>
+                <li>Redis</li>
+                <li>OpenAI API</li>
+                <li>Evolution API</li>
+                <li>RAG</li>
+                <li>Docker</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <div class="project-card__placeholder">
+                <img src="./assets/image/n8n.png" alt="Fluxo n8n de agente de IA conectado ao Qwen e MySQL">
+              </div>
+              <div class="project-card__overlay">
+                <a href="https://lnkd.in/dXSfc4Qy" class="icon-btn"
+                  aria-label="Ver projeto de agente Qwen e n8n no GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 data-i18n="projects.qwenN8nTitle">Agente de IA para WhatsApp — Qwen e n8n</h3>
+              <p data-i18n="projects.qwenN8nText">Laboratório experimental com Qwen 3.6 Plus, n8n, Evolution API, MySQL
+                e RAG para consultar produtos e responder pelo WhatsApp. Explora agentes, ferramentas e testes de prompt
+                injection; não é destinado a produção.</p>
+              <ul class="project-card__tags">
+                <li>Qwen 3.6 Plus</li>
+                <li>n8n</li>
+                <li>Evolution API</li>
+                <li>MySQL</li>
+                <li>RAG</li>
+                <li>Docker</li>
+                <li>Prompt Injection</li>
+              </ul>
+            </div>
+          </article>
 
           <article class="project-card" data-reveal>
             <div class="project-card__media">
@@ -575,8 +643,8 @@
                 rel="noreferrer" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
               <a href="https://github.com/alves1503" class="social-icon" aria-label="GitHub" rel="noreferrer"
                 target="_blank"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.instagram.com/alvezwx05/" class="social-icon" aria-label="Instagram" rel="noreferrer"
-                target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.instagram.com/alvezns.dev/" class="social-icon" aria-label="Instagram"
+                rel="noreferrer" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             </div>
           </div>
 
@@ -644,6 +712,7 @@
   </footer>
 
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/chat-widget.js" defer></script>
 </body>
 
 </html>
