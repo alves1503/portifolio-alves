@@ -12,7 +12,56 @@
       root.innerHTML = markup;
       initChat(root);
     })
-    .catch(() => root.remove());
+    .catch(() => {
+      // Sem o servidor Express (Live Server, hospedagem estática, file://) o botão continua visível
+      root.innerHTML = fallbackMarkup();
+      initChat(root);
+    });
+
+  function fallbackMarkup() {
+    return `
+<div class="portfolio-chat" data-chat-root>
+  <section class="portfolio-chat__panel" id="portfolio-chat-panel" role="dialog" aria-modal="false"
+    aria-labelledby="portfolio-chat-title" hidden>
+    <header class="portfolio-chat__header">
+      <div class="portfolio-chat__identity">
+        <img class="portfolio-chat__avatar" src="assets/image/ia.png" alt="" aria-hidden="true">
+        <div>
+          <h2 id="portfolio-chat-title" data-chat-copy="title">al.ai</h2>
+          <p><span class="portfolio-chat__status"></span><span data-chat-copy="status">Assistente do Henrique</span></p>
+        </div>
+      </div>
+      <button class="portfolio-chat__icon-button" type="button" data-chat-close aria-label="Fechar conversa" title="Fechar conversa">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </header>
+    <div class="portfolio-chat__messages" data-chat-messages role="log" aria-live="polite" aria-relevant="additions">
+      <div class="portfolio-chat__message portfolio-chat__message--assistant" data-chat-greeting></div>
+      <div class="portfolio-chat__suggestions" data-chat-suggestions>
+        <button type="button" data-chat-suggestion=""></button>
+        <button type="button" data-chat-suggestion=""></button>
+        <button type="button" data-chat-suggestion=""></button>
+        <button type="button" data-chat-suggestion=""></button>
+      </div>
+    </div>
+    <p class="portfolio-chat__error" data-chat-error role="status" hidden></p>
+    <form class="portfolio-chat__form" data-chat-form>
+      <label class="visually-hidden" for="portfolio-chat-input" data-chat-copy="inputLabel">Sua pergunta</label>
+      <input id="portfolio-chat-input" name="message" type="text" maxlength="1200" autocomplete="off"
+        placeholder="Pergunte sobre o Henrique..." data-chat-copy="placeholder" required>
+      <button class="portfolio-chat__send" type="submit" data-chat-send aria-label="Enviar mensagem" title="Enviar mensagem">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </button>
+    </form>
+    <p class="portfolio-chat__note" data-chat-copy="note">Respostas geradas por IA com base neste portfólio.</p>
+  </section>
+  <button class="portfolio-chat__launcher" type="button" aria-label="Perguntar ao al.ai" aria-expanded="false"
+    aria-controls="portfolio-chat-panel" data-chat-toggle title="Perguntar ao al.ai">
+    <i class="fa-solid fa-robot" aria-hidden="true"></i>
+    <span class="visually-hidden" data-chat-copy="launcher">Pergunte ao al.ai</span>
+  </button>
+</div>`;
+  }
 
   function initChat(mount) {
     const panel = mount.querySelector('#portfolio-chat-panel');
@@ -36,6 +85,7 @@
         prompts: ['O que Henrique está estudando?', 'Quais projetos ele desenvolveu?', 'Onde Henrique trabalha atualmente?', 'Quais tecnologias ele usa?'],
         suggestions: ['Formação', 'Projetos', 'Experiência', 'Tecnologias'],
         sending: 'Pensando...', error: 'Não consegui responder agora. Tente novamente.',
+        offline: 'O assistente está offline agora. Fale com o Henrique pelo formulário de contato.',
         notConfigured: 'O chat ainda não está configurado. Adicione uma chave OpenAI válida em OPENAI_API_KEY no arquivo .env e reinicie o servidor.',
         limit: 'A pergunta deve ter até 1.200 caracteres.'
       },
@@ -47,6 +97,7 @@
         prompts: ['What is Henrique studying?', 'Which projects has he built?', 'Where does he currently work?', 'Which technologies does he use?'],
         suggestions: ['Education', 'Projects', 'Experience', 'Technologies'],
         sending: 'Thinking...', error: 'I could not answer right now. Please try again.',
+        offline: 'The assistant is offline right now. Reach Henrique through the contact form.',
         notConfigured: 'The chat is not configured yet. Add a valid OpenAI key to OPENAI_API_KEY in .env and restart the server.',
         limit: 'Your question must be 1,200 characters or fewer.'
       }
@@ -115,10 +166,11 @@
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({ message, history: conversation.slice(-8) })
         });
-        const data = await response.json();
-        if (!response.ok || typeof data.answer !== 'string') {
+        const data = await response.json().catch(() => null);
+        if (!response.ok || !data || typeof data.answer !== 'string') {
           pendingMessage.remove();
-          errorNode.textContent = response.status === 503 ? currentCopy().notConfigured : currentCopy().error;
+          errorNode.textContent = response.status === 503 ? currentCopy().notConfigured
+            : (response.status === 404 || !data) ? currentCopy().offline : currentCopy().error;
           errorNode.hidden = false;
           return;
         }
@@ -127,7 +179,7 @@
         conversation.push({ role: 'user', content: message }, { role: 'assistant', content: data.answer });
       } catch {
         pendingMessage.remove();
-        errorNode.textContent = currentCopy().error;
+        errorNode.textContent = currentCopy().offline;
         errorNode.hidden = false;
       } finally {
         isSending = false;
