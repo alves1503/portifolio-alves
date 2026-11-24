@@ -27,15 +27,15 @@
   border: 1px solid color-mix(in srgb, var(--chat-coral) 70%, white);
   border-radius: 50%;
   background: var(--chat-coral);
-  color: #0a0a0c;
-  box-shadow: 0 12px 34px rgba(0, 0, 0, .35);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
   font-size: 1.35rem;
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .portfolio-chat__launcher:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 38px rgba(255, 77, 77, .28);
+  box-shadow: 0 16px 38px color-mix(in srgb, var(--chat-coral) 35%, transparent);
 }
 
 .portfolio-chat__panel {
@@ -250,7 +250,7 @@
 .portfolio-chat__send {
   border-color: var(--chat-coral);
   background: var(--chat-coral);
-  color: #0a0a0c;
+  color: #fff;
 }
 
 .portfolio-chat__send:disabled {
